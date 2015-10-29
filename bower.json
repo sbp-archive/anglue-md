@@ -1,0 +1,31 @@
+{
+  "name": "anglue",
+  "version": "1.2.3",
+  "authors": [
+    "Tommy Maintz <tommy.maintz@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dist/global",
+    "test",
+    "tests",
+    "reports",
+    ".gitignore",
+    ".jshintrc",
+    "Gruntfile.js",
+    "index.html",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "anglue": "1.x.x",
+    "angular-material": "1.0.0-rc1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.7",
+    "requirejs": "~2.1.18"
+  }
+}

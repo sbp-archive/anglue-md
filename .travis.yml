@@ -1,0 +1,31 @@
+language: node_js
+sudo: false
+node_js:
+  - "0.12"
+
+env:
+  - PHANTOMJS2_VERSION=2.0.0
+
+cache:
+  directories:
+    - node_modules
+    - bower_components
+
+before_install:
+  - mkdir travis-phantomjs
+  - wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
+  - tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs
+  - export PATH=$PWD/travis-phantomjs:$PATH
+
+install:
+  - npm install -g grunt-cli
+  - npm install -g bower
+  - npm install
+  - bower install
+
+script:
+  - grunt build
+
+after_success:
+  - grunt coveralls
+  - rm -rf travis-phantomjs
