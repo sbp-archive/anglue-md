@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/grunt-babel/node_modules/babel-core/browser-polyfill.min.js',
+      'node_modules/babel-core/browser-polyfill.min.js',
       'karma-main.js',
       {pattern: 'bower_components/anglue/dist/amd/**/*.js', included: false},
       {pattern: 'bower_components/angular/angular.js', included: false},
